@@ -1,7 +1,8 @@
 <?php
 
 namespace CORE\ROUTER;
-class WebRouter extends Router {
+class WebRouter {
+    private static $_NAMESPACE = '\\APP\\';
 
     private function __construct () {}
 
@@ -11,6 +12,11 @@ class WebRouter extends Router {
     }
 
     protected static function _doRouter () {
-        print_r ($_SERVER);
+        $pathInfo = trim ($_SERVER['PATH_INFO'] , '/');
+        list ($ctl , $act) = explode ('/' , $pathInfo);
+        $ctl = empty ($ctl) ? 'Default' : $ctl;
+        $act = empty ($act) ? 'Index' : $act;
+        
+        
     }
 }

@@ -18,7 +18,7 @@ class ConRouter {
        empty($target) && $target = 'Default::Run';
        list ($ctl , $act) = explode ('::' , $target);
        empty($target) && $act = 'Run';
-       $class = '\\CONSOLE\\CTL\\' . $ctl . 'CTL';
+       $class = '\\CONSOLE\\CTLS\\' . $ctl . 'CTL';
        $curCtl = new $class;
        \CORE\LIBRARY\UTIL\Console::Log('Route to ' . implode ('::' , [$class , $act]) . '................');
        if (!method_exists ($curCtl , $act)) exit ('call an undefine method ['. $act .'] at class [' . $class . ']' . PHP_EOL);
