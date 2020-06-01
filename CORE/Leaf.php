@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace CORE;
 class Leaf  {
     private function __construct () {}
 

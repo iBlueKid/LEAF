@@ -8,7 +8,6 @@ class Controller {
     // protected $_view; //view instance
     
     function __construct () {
-        $this -> _context = RequestContext :: Context ();
         if (method_exists ($this , '_Init')) $this -> _Init ();
     }
     //Init hook
@@ -74,7 +73,7 @@ class Controller {
         $action = $paths[1] ?? '';
         if( empty($controller) || empty($action) ) throw new \Exception ('can not redirect to an empty controller or action');
 
-        $controllerName = 'App\\Controllers\\' . $controller . 'Controller';
+        $controllerName = '\\APP\\CONTROLLERS\\' . $controller . 'Controller';
         $method = new \ReflectionMethod ($controllerName, $action);
         $params = $method -> getParameters();
 
