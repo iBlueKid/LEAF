@@ -5,5 +5,6 @@ use CORE\LIBRARY\CONTROLLER\Controller;
 
 class DefaultController extends Controller {
     public function Index () {
+        echo 'I\'m  here!!!';
     }
 }
